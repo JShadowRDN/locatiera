@@ -1,755 +1,498 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locatiera — Motor, Snorkeling & Villa di Gili Trawangan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        sand: '#F1E7D2',
-                        sandDark: '#E4D3AC',
-                        ink: '#153331',
-                        teal: '#0F4C49',
-                        tealDark: '#0A3735',
-                        coral: '#FF6B4A',
-                        lagoon: '#3FA69E',
-                    },
-                    fontFamily: {
-                        display: ['"Fraunces"', 'serif'],
-                        body: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        body {
-            background-color: #F1E7D2;
-        }
-
-        .perforated {
-            background-image: repeating-linear-gradient(90deg, #15333155 0 10px, transparent 10px 20px);
-            background-position: bottom;
-            background-size: 100% 2px;
-            background-repeat: no-repeat;
-        }
-
-        .punch {
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            background: #F1E7D2;
-            border-radius: 9999px;
-            border: 1.5px solid #15333122;
-        }
-
-        .stub-divider {
-            position: relative;
-            border-top: 2px dashed #15333133;
-        }
-
-        .grain {
-            background-image: radial-gradient(#15333114 1px, transparent 1px);
-            background-size: 18px 18px;
-        }
-
-        @keyframes riseIn {
-            from {
-                opacity: 0;
-                transform: translateY(14px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .rise-1 {
-            animation: riseIn .7s cubic-bezier(.16, 1, .3, 1) .05s both;
-        }
-
-        .rise-2 {
-            animation: riseIn .7s cubic-bezier(.16, 1, .3, 1) .15s both;
-        }
-
-        .rise-3 {
-            animation: riseIn .7s cubic-bezier(.16, 1, .3, 1) .25s both;
-        }
-
-        .rise-4 {
-            animation: riseIn .7s cubic-bezier(.16, 1, .3, 1) .35s both;
-        }
-
-        #mobile-menu {
-            transition: max-height .35s ease, opacity .3s ease;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ruli Jordan - Full Stack Engineer & Data Analyst</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/LOGO RJ.png">
 </head>
+<body>
 
-<body class="font-body text-ink">
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="img/sdsfs.png" alt="Ruli Logo">
+    </a>
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-sand/90 backdrop-blur-sm perforated">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8">
-            <div class="flex items-center justify-between h-20">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <!-- Logo -->
-                <a href="#" class="flex items-center gap-2.5 shrink-0">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 20C7 15 10 15 13 20C16 25 19 25 22 20C25 15 28 15 31 20" stroke="#FF6B4A"
-                            stroke-width="2.4" stroke-linecap="round" />
-                        <path d="M4 26C7 21 10 21 13 26C16 31 19 31 22 26C25 21 28 21 31 26" stroke="#0F4C49"
-                            stroke-width="2.4" stroke-linecap="round" />
-                        <circle cx="17" cy="9" r="5.5" fill="#0F4C49" />
-                    </svg>
-                    <span class="font-display font-semibold text-xl tracking-tight">Locatiera</span>
-                </a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#journey">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills-section">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-                <!-- Desktop nav -->
-                <nav class="hidden md:flex items-center gap-9 text-[15px] font-medium">
-                    <a href="#motor" class="hover:text-coral transition-colors">Sewa Motor</a>
-                    <a href="#snorkeling" class="hover:text-coral transition-colors">Snorkeling</a>
-                    <a href="#villa" class="hover:text-coral transition-colors">Villa</a>
-                    <a href="#kontak" class="hover:text-coral transition-colors">Kontak</a>
-                </nav>
+<!-- Hero Section -->
+<section class="hero-section pt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Text Content -->
+      <div class="col-md-6 text-white">
+        <h1>Full Stack Engineer & Data Analyst: I Build Web Systems and Turn Their Data into Decisions</h1>
+        <h4>5+ years building information systems for government agencies and businesses, from database design and reporting dashboards to data-driven insights. Python, Flask, PHP, and SQL.</h4>
 
-                <div class="hidden md:flex items-center gap-4">
-                    <span class="text-sm text-ink/60">+62 896-6045-7552</span>
-                    <a href="#booking"
-                        class="bg-teal text-sand px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-tealDark transition-colors">
-                        Booking Sekarang
-                    </a>
-                </div>
+        <a href="#projects" class="btn">View My Works</a>
+        <!-- TODO: ganti "#" dengan link file CV (mis. files/CV-Ruli-Jordan.pdf) -->
+        <a href="#" class="btn-1">Download My Resume</a>
+      </div>
 
-                <!-- Mobile toggle -->
-                <button id="menu-btn" aria-label="Buka menu" aria-expanded="false"
-                    class="md:hidden relative w-9 h-9 flex flex-col justify-center items-center gap-[5px]">
-                    <span class="menu-line block w-6 h-[2px] bg-ink transition-transform duration-300"></span>
-                    <span class="menu-line block w-6 h-[2px] bg-ink transition-opacity duration-300"></span>
-                    <span class="menu-line block w-6 h-[2px] bg-ink transition-transform duration-300"></span>
-                </button>
-            </div>
+      <!-- Container Gambar -->
+      <div class="col-md-6 position-relative text-center">
+        <!-- Kotak Glass (di belakang gambar) -->
+        <div class="glass-bg"></div>
+        <div class="hero-img-container"></div>
+        <!-- Gambar -->
+        <img src="img/foto_diri.png" alt="Ruli Jordan" class="img-fluid hero-img" />
+      </div>
+    </div> <!-- end row -->
+  </div> <!-- end container -->
+</section> <!-- end hero-section -->
+
+<!------------------------------ HIGHLIGHTS ------------------------------>
+
+<section id="highlights">
+  <div class="container">
+    <div class="highlights">
+      <div class="highlight-box">5+ Years Programming Experience</div>
+      <div class="highlight-box">Built 5+ Government & Business Systems</div>
+      <div class="highlight-box">10+ Professional Websites Developed</div>
+      <div class="highlight-box">100+ Students Registered via JAPATI (2019)</div>
+      <div class="highlight-box">Python · Flask · PHP · SQL</div>
+      <div class="highlight-box">BNSP Certified Systems Analyst</div>
+      <!-- TODO: tambahkan angka dampak asli, mis. "X,000+ records managed" atau "X teknisi memakai E-Report" -->
+    </div>
+  </div>
+</section>
+
+<!------------------------------ TIMELINE ------------------------------>
+
+<section id="journey">
+  <div class="container">
+    <h2 class="section-title">My Journey</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>The Beginning</h3>
+        <p>
+          I started programming in 2019 by building a website for Minhaajushshoobiriin Islamic School, followed by a simple attendance system in PHP. Those first projects taught me the basics of how data is captured, stored, and reported.
+        </p>
+        <p>
+          At the same time, I pursued a degree in Information Systems, which gave me the foundation in database design, systems analysis, and software development that I still use today.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The Evolution</h3>
+        <p>
+          Over time, I moved on to larger systems. JAPATI (Jaringan Aplikasi Anti Putus Sekolah) was built for the Bogor City Education Office to track and re-enroll students who had dropped out of school, with city-wide tracking and geolocation features.
+        </p>
+        <p>
+          I later developed SILAK, a financial reporting system for the Bogor City Public Works Office (PUPR), and an E-Report and Attendance System for PT Narwastu Asia Ekatama. Across all of them, my focus was the same: collect data reliably and turn it into reports people can act on.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>The Now</h3>
+        <p>
+          Today, I work as a Full Stack Engineer and Data Analyst. I build the applications that capture data, design the databases behind them, and analyze that data to support better decisions.
+        </p>
+        <p>
+          I am continuing to deepen my data skills with SQL, Python, and BI tools, and exploring modern data engineering tools such as Airflow, BigQuery, and dbt.
+        </p>
+        <p>
+          My mission is to build systems that make a real impact on people's lives, just like JAPATI did for students in Bogor.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!------------------------------ CTA Section ------------------------------>
+
+<section id="cta">
+  <div class="overlay"></div>
+  <div class="cta-content">
+    <h2>I'm seeking a role where I can build reliable web systems and turn data into insight, while continuing to grow.</h2>
+    <p>With 5+ years of full-stack experience and a strong interest in data analytics, I'm ready to bring both sides to new challenges and opportunities.</p>
+  </div>
+</section>
+
+<!------------------------------ Work Experience ------------------------------>
+
+<section id="experience" class="experience pt-5">
+  <div class="container text-center">
+    <h1 class="mb-4">Work Experience</h1>
+    <div class="row justify-content-center gap-3">
+
+      <div class="folder-card">
+        <div class="folder-tab"></div>
+        <div class="folder-body">
+          <h3>IT Support & Web Developer</h3>
+          <p>at Minhaajushshoobiriin Islamic School</p>
+          <p>(2019 - 2022)</p>
+          <a href="minjusho.html" class="folder-btn">Lihat Detail</a>
         </div>
+      </div>
 
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 opacity-0">
-            <nav class="px-5 sm:px-8 pb-6 pt-2 flex flex-col gap-1 text-[15px] font-medium border-t border-ink/10">
-                <a href="#motor" class="py-3 border-b border-dashed border-ink/15">Sewa Motor</a>
-                <a href="#snorkeling" class="py-3 border-b border-dashed border-ink/15">Snorkeling</a>
-                <a href="#villa" class="py-3 border-b border-dashed border-ink/15">Villa</a>
-                <a href="#kontak" class="py-3 border-b border-dashed border-ink/15">Kontak</a>
-                <a href="#booking"
-                    class="mt-4 bg-teal text-sand text-center px-5 py-3 rounded-full font-semibold">Booking Sekarang</a>
-            </nav>
+      <div class="folder-card">
+        <div class="folder-tab"></div>
+        <div class="folder-body">
+          <h3>Web Developer</h3>
+          <p>at Rumah Halal DPS</p>
+          <p>(2022)</p>
+          <a href="rumah.html" class="folder-btn">Lihat Detail</a>
         </div>
-    </header>
+      </div>
 
-    <!-- HERO -->
-    <main class="pt-32 sm:pt-36 pb-20 relative overflow-hidden">
-        <div class="absolute inset-0 grain opacity-60 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
-            <div class="grid md:grid-cols-2 gap-14 md:gap-10 items-start">
-
-                <!-- Left: copy -->
-                <div>
-                    <div
-                        class="rise-1 inline-flex items-center gap-2 border border-dashed border-ink/30 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-teal">
-                        <span class="w-1.5 h-1.5 rounded-full bg-coral"></span>
-                        BALI
-                    </div>
-
-                    <h1
-                        class="rise-2 font-display font-semibold text-[2.6rem] leading-[1.08] sm:text-6xl sm:leading-[1.05] mt-6 tracking-tight">
-                        Satu pulau,
-                        <span class="italic font-medium text-teal">tiga cara</span>
-                        menikmatinya.
-                    </h1>
-
-                    <p class="rise-3 mt-6 text-[17px] leading-relaxed text-ink/70 max-w-md">
-                        Ambil motor buat keliling pulau, cebur ke spot snorkeling favorit turtle point,
-                        atau rebahan aja di villa tepi pantai. Semua bisa dipesan dalam satu tiket, tanpa ribet.
-                    </p>
-
-                    <div class="rise-4 mt-8 flex flex-wrap items-center gap-4">
-                        <a href="#booking"
-                            class="bg-coral text-sand px-7 py-3.5 rounded-full font-semibold text-[15px] hover:brightness-105 hover:-translate-y-0.5 transition-all shadow-[0_8px_20px_-8px_rgba(255,107,74,0.6)]">
-                            Mulai Booking
-                        </a>
-                        <a href="#snorkeling"
-                            class="flex items-center gap-2 font-semibold text-[15px] text-teal hover:text-coral transition-colors">
-                            Lihat rute snorkeling
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="rise-4 mt-10 flex items-center gap-6 text-sm text-ink/60">
-                        <div><span class="font-display text-2xl font-semibold text-ink">4.9</span>/5 rating tamu</div>
-                        <div class="w-px h-8 bg-ink/15"></div>
-                        <div><span class="font-display text-2xl font-semibold text-ink">1.200+</span> trip selesai</div>
-                    </div>
-                </div>
-
-                <!-- Right: ticket stub card -->
-                <div
-                    class="rise-3 relative bg-[#FBF6EA] rounded-[28px] shadow-[0_30px_60px_-25px_rgba(21,51,49,0.35)] border border-ink/10 pt-7 pb-6 overflow-visible">
-
-                    <div class="px-7 flex items-center justify-between pb-5">
-                        <div>
-                            <p class="text-[11px] tracking-widest uppercase text-ink/45 font-semibold">Tiket Hari Ini
-                            </p>
-                            <p class="font-display text-lg font-semibold">Rencana Liburanmu</p>
-                        </div>
-                        <svg width="30" height="30" viewBox="0 0 34 34" fill="none">
-                            <path d="M4 20C7 15 10 15 13 20C16 25 19 25 22 20C25 15 28 15 31 20" stroke="#FF6B4A"
-                                stroke-width="2.2" stroke-linecap="round" />
-                            <path d="M4 26C7 21 10 21 13 26C16 31 19 31 22 26C25 21 28 21 31 26" stroke="#0F4C49"
-                                stroke-width="2.2" stroke-linecap="round" />
-                        </svg>
-                    </div>
-
-                    <!-- item 1 -->
-                    <div class="px-7 py-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-teal/10 flex items-center justify-center shrink-0">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <circle cx="6" cy="17" r="3" stroke="#0F4C49" stroke-width="1.6" />
-                                <circle cx="18" cy="17" r="3" stroke="#0F4C49" stroke-width="1.6" />
-                                <path d="M9 17h6l-2-6h-3l-1 3M14 11l2-3h3" stroke="#0F4C49" stroke-width="1.6"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <p class="font-semibold text-[15px]">Sewa Motor Matic</p>
-                            <p class="text-sm text-ink/55">Bebas keliling, full tangki</p>
-                        </div>
-                        <p class="font-display font-semibold text-[15px] whitespace-nowrap">Rp75rb<span
-                                class="text-ink/45 text-xs font-body">/hari</span></p>
-                    </div>
-
-                    <div class="stub-divider mx-1">
-                        <span class="punch -left-[13px] -top-[13px]"></span>
-                        <span class="punch -right-[13px] -top-[13px]"></span>
-                    </div>
-
-                    <!-- item 2 -->
-                    <div class="px-7 py-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-lagoon/15 flex items-center justify-center shrink-0">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 3c-3 3-4 6-4 9a4 4 0 008 0c0-3-1-6-4-9z" stroke="#3FA69E"
-                                    stroke-width="1.6" stroke-linejoin="round" />
-                                <path d="M4 20c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0" stroke="#3FA69E"
-                                    stroke-width="1.6" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <p class="font-semibold text-[15px]">Trip Snorkeling</p>
-                            <p class="text-sm text-ink/55">3 spot, kapal &amp; alat termasuk</p>
-                        </div>
-                        <p class="font-display font-semibold text-[15px] whitespace-nowrap">Rp250rb<span
-                                class="text-ink/45 text-xs font-body">/org</span></p>
-                    </div>
-
-                    <div class="stub-divider mx-1">
-                        <span class="punch -left-[13px] -top-[13px]"></span>
-                        <span class="punch -right-[13px] -top-[13px]"></span>
-                    </div>
-
-                    <!-- item 3 -->
-                    <div class="px-7 py-5 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-2xl bg-coral/15 flex items-center justify-center shrink-0">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 11l8-6 8 6" stroke="#FF6B4A" stroke-width="1.6" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M5.5 10v9h13v-9" stroke="#FF6B4A" stroke-width="1.6" stroke-linejoin="round" />
-                                <path d="M10 19v-5h4v5" stroke="#FF6B4A" stroke-width="1.6" />
-                            </svg>
-                        </div>
-                        <div class="flex-1">
-                            <p class="font-semibold text-[15px]">Villa Tepi Pantai</p>
-                            <p class="text-sm text-ink/55">2 kamar, kolam privat</p>
-                        </div>
-                        <p class="font-display font-semibold text-[15px] whitespace-nowrap">Rp850rb<span
-                                class="text-ink/45 text-xs font-body">/malam</span></p>
-                    </div>
-
-                    <div class="px-7 pt-4">
-                        <a href="#booking"
-                            class="block text-center w-full bg-ink text-sand py-3 rounded-full font-semibold text-[15px] hover:bg-teal transition-colors">
-                            Susun Paket Sendiri
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+      <div class="folder-card">
+        <div class="folder-tab"></div>
+        <div class="folder-body">
+          <h3>Web Developer & Educator</h3>
+          <p>at Unit SMK Pondok Sekolah Multazam Bogor</p>
+          <p>(2022-2025)</p>
+          <a href="multazam.html" class="folder-btn">Lihat Detail</a>
         </div>
-    </main>
+      </div>
 
-    <!-- SECTION 1: SEWA MOTOR -->
-    <section id="motor" class="scroll-mt-24 py-20 sm:py-28 border-t border-dashed border-ink/15">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8">
-            <div class="max-w-xl">
-                <div
-                    class="inline-flex items-center gap-2 border border-dashed border-ink/30 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-teal">
-                    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span> Sewa Motor
-                </div>
-                <h2 class="font-display font-semibold text-3xl sm:text-4xl mt-5 tracking-tight">Pilih motor, langsung
-                    gas.</h2>
-                <p class="mt-3 text-ink/65 leading-relaxed">Semua unit sudah termasuk helm &amp; STNK. Pilih motornya,
-                    konfirmasi lewat WhatsApp, tinggal ambil di lokasi.</p>
-            </div>
-            <div id="motor-grid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div class="folder-card">
+        <div class="folder-tab"></div>
+        <div class="folder-body">
+          <h3>Full-Stack Developer</h3>
+          <p>at Narwastu Asia Ekatama</p>
+          <p>(2023-2025)</p>
+          <!-- TODO: buat halaman detail dan ubah menjadi <a href="narwastu.html" class="folder-btn"> -->
+          <button class="folder-btn">Lihat Detail</button>
         </div>
-    </section>
+      </div>
 
-    <!-- SECTION 2: SNORKELING -->
-    <section id="snorkeling" class="scroll-mt-24 py-20 sm:py-28 border-t border-dashed border-ink/15 bg-[#EADFC5]/50">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8">
-            <div class="max-w-xl">
-                <div
-                    class="inline-flex items-center gap-2 border border-dashed border-ink/30 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-teal">
-                    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span> Snorkeling
-                </div>
-                <h2 class="font-display font-semibold text-3xl sm:text-4xl mt-5 tracking-tight">Pilih paket, tentukan
-                    jamnya.</h2>
-                <p class="mt-3 text-ink/65 leading-relaxed">Klik paketnya, pilih tanggal &amp; jam berangkat, lalu
-                    jumlah orang — harga langsung ke-hitung otomatis.</p>
-            </div>
-            <div id="snorkel-grid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div class="folder-card">
+        <div class="folder-tab"></div>
+        <div class="folder-body">
+          <h3>Freelance Programmer</h3>
+          <p>Remote Projects (2019 - now)</p>
+          <!-- TODO: buat halaman detail dan ubah menjadi <a href="freelance.html" class="folder-btn"> -->
+          <button class="folder-btn">Lihat Detail</button>
         </div>
-    </section>
+      </div>
 
-    <!-- SECTION 3: SEWA VILLA -->
-    <section id="villa" class="scroll-mt-24 py-20 sm:py-28 border-t border-dashed border-ink/15">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8">
-            <div class="max-w-xl">
-                <div
-                    class="inline-flex items-center gap-2 border border-dashed border-ink/30 rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-teal">
-                    <span class="w-1.5 h-1.5 rounded-full bg-coral"></span> Sewa Villa
-                </div>
-                <h2 class="font-display font-semibold text-3xl sm:text-4xl mt-5 tracking-tight">Rebahan di tepi pantai.
-                </h2>
-                <p class="mt-3 text-ink/65 leading-relaxed">Pilih tipe kamarnya, isi tanggal menginap, total harganya
-                    langsung kelihatan sebelum booking.</p>
-            </div>
-            <div id="villa-grid" class="mt-12 grid sm:grid-cols-1 lg:grid-cols-3 gap-6"></div>
-        </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- MODAL: SNORKELING BOOKING -->
-    <div id="snorkel-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4">
-        <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm" onclick="closeSnorkelModal()"></div>
-        <div class="relative bg-[#FBF6EA] rounded-[26px] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closeSnorkelModal()" aria-label="Tutup"
-                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 flex items-center justify-center text-lg leading-none">&times;</button>
-            <div class="p-6 sm:p-7">
-                <div class="flex items-center gap-3 pr-8">
-                    <div id="snorkel-modal-img"
-                        class="w-14 h-14 rounded-2xl bg-teal/10 overflow-hidden shrink-0 bg-cover bg-center"></div>
-                    <div>
-                        <p class="text-[11px] uppercase tracking-widest text-ink/45 font-semibold">Booking Snorkeling
-                        </p>
-                        <h3 id="snorkel-modal-name" class="font-display font-semibold text-lg leading-tight"></h3>
-                        <p id="snorkel-modal-price" class="text-sm text-ink/55"></p>
-                    </div>
-                </div>
+<!------------------------------ Portfolio ------------------------------>
 
-                <div class="mt-6">
-                    <label class="text-xs font-semibold uppercase tracking-wide text-ink/55">Pilih Tanggal</label>
-                    <input type="date" id="snorkel-date" onchange="onSnorkelChange()"
-                        class="mt-2 w-full border border-ink/15 rounded-xl px-4 py-3 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
-                </div>
-
-                <div class="mt-5">
-                    <label class="text-xs font-semibold uppercase tracking-wide text-ink/55">Pilih Jam Berangkat</label>
-                    <div id="snorkel-times" class="mt-2 grid grid-cols-2 gap-2"></div>
-                </div>
-
-                <div class="mt-5">
-                    <label class="text-xs font-semibold uppercase tracking-wide text-ink/55">Jumlah Orang</label>
-                    <div class="mt-2 flex items-center gap-3">
-                        <button onclick="changePeople(-1)"
-                            class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center text-lg font-semibold hover:bg-ink/5">–</button>
-                        <span id="snorkel-people" class="w-8 text-center font-semibold">1</span>
-                        <button onclick="changePeople(1)"
-                            class="w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center text-lg font-semibold hover:bg-ink/5">+</button>
-                        <span class="text-sm text-ink/50">orang</span>
-                    </div>
-                </div>
-
-                <div class="mt-6 pt-5 border-t border-dashed border-ink/15 flex items-center justify-between">
-                    <span class="text-sm text-ink/60">Total Harga</span>
-                    <span id="snorkel-total" class="font-display text-xl font-semibold">Rp0</span>
-                </div>
-
-                <button id="snorkel-confirm" onclick="confirmSnorkel()" disabled
-                    class="mt-5 w-full bg-coral text-sand py-3.5 rounded-full font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:brightness-105 transition-all">
-                    Booking via WhatsApp
-                </button>
-                <p class="mt-3 text-center text-xs text-ink/40">Pilih tanggal &amp; jam dulu ya untuk lanjut booking.
-                </p>
-            </div>
-        </div>
+<section id="portfolio-highlight">
+  <div class="container">
+    <!-- Judul Section -->
+    <div class="section-header text-center">
+      <h2>“Where Code Meets Data”</h2>
+      <p>Highlighted Projects & Results (Portfolio Pieces)</p>
     </div>
 
-    <!-- MODAL: VILLA BOOKING -->
-    <div id="villa-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4">
-        <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm" onclick="closeVillaModal()"></div>
-        <div class="relative bg-[#FBF6EA] rounded-[26px] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closeVillaModal()" aria-label="Tutup"
-                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-ink/5 hover:bg-ink/10 flex items-center justify-center text-lg leading-none">&times;</button>
-            <div class="p-6 sm:p-7">
-                <div class="flex items-center gap-3 pr-8">
-                    <div id="villa-modal-img"
-                        class="w-14 h-14 rounded-2xl bg-coral/10 overflow-hidden shrink-0 bg-cover bg-center"></div>
-                    <div>
-                        <p class="text-[11px] uppercase tracking-widest text-ink/45 font-semibold">Booking Villa</p>
-                        <h3 id="villa-modal-name" class="font-display font-semibold text-lg leading-tight"></h3>
-                        <p id="villa-modal-price" class="text-sm text-ink/55"></p>
-                    </div>
-                </div>
-
-                <div class="mt-6 grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="text-xs font-semibold uppercase tracking-wide text-ink/55">Check-in</label>
-                        <input type="date" id="villa-checkin" onchange="onVillaChange()"
-                            class="mt-2 w-full border border-ink/15 rounded-xl px-3 py-3 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
-                    </div>
-                    <div>
-                        <label class="text-xs font-semibold uppercase tracking-wide text-ink/55">Check-out</label>
-                        <input type="date" id="villa-checkout" onchange="onVillaChange()"
-                            class="mt-2 w-full border border-ink/15 rounded-xl px-3 py-3 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal/40">
-                    </div>
-                </div>
-
-                <div id="villa-nights-note" class="mt-3 text-sm text-ink/50"></div>
-
-                <div class="mt-6 pt-5 border-t border-dashed border-ink/15 flex items-center justify-between">
-                    <span class="text-sm text-ink/60">Total Harga</span>
-                    <span id="villa-total" class="font-display text-xl font-semibold">Rp0</span>
-                </div>
-
-                <button id="villa-confirm" onclick="confirmVilla()" disabled
-                    class="mt-5 w-full bg-coral text-sand py-3.5 rounded-full font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:brightness-105 transition-all">
-                    Booking via WhatsApp
-                </button>
-                <p class="mt-3 text-center text-xs text-ink/40">Isi tanggal check-in &amp; check-out dulu ya untuk
-                    lanjut booking.</p>
-            </div>
-        </div>
+    <!-- Highlight 1 -->
+    <div class="row align-items-center mt-5">
+      <div class="col-md-6">
+        <h3>SILAK – Financial Reporting Information System (Dinas PUPR Kota Bogor)</h3>
+        <p>
+          <strong>Problem:</strong> Financial reporting and monitoring at the Bogor City Public Works and Spatial Planning Office needed to be more accurate, transparent, and timely.
+        </p>
+        <p>
+          <strong>What I built:</strong> A web-based system for financial data entry, validation, monitoring, and report generation, providing real-time financial data to support decision-making and accountability. I worked as a programmer expert, responsible for development and implementation in line with government standards.
+        </p>
+        <!-- TODO: tambahkan Tech stack dan Result (angka/dampak) -->
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="img/SILAK.png" alt="SILAK Financial Reporting System" class="img-fluid rounded shadow">
+      </div>
     </div>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const lines = btn.querySelectorAll('.menu-line');
-        let open = false;
-
-        btn.addEventListener('click', () => {
-            open = !open;
-            btn.setAttribute('aria-expanded', open);
-            if (open) {
-                menu.style.maxHeight = menu.scrollHeight + 'px';
-                menu.style.opacity = '1';
-                lines[0].style.transform = 'translateY(7px) rotate(45deg)';
-                lines[1].style.opacity = '0';
-                lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
-            } else {
-                menu.style.maxHeight = '0px';
-                menu.style.opacity = '0';
-                lines[0].style.transform = 'none';
-                lines[1].style.opacity = '1';
-                lines[2].style.transform = 'none';
-            }
-        });
-
-        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-            open = false;
-            btn.setAttribute('aria-expanded', 'false');
-            menu.style.maxHeight = '0px';
-            menu.style.opacity = '0';
-            lines[0].style.transform = 'none';
-            lines[1].style.opacity = '1';
-            lines[2].style.transform = 'none';
-        }));
-    </script>
-
-    <script>
-        /* ---------- CONFIG ---------- */
-        const WA_NUMBER = '6289660457552'; // +62 896-6045-7552
-
-        const rupiah = (n) => 'Rp' + n.toLocaleString('id-ID');
-
-        const waLink = (msg) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-
-        /* ---------- DATA ---------- */
-        const motors = [
-            { name: 'Honda Beat', type: 'Matic 110cc', price: 75000, stock: 4, duration: '1–14 hari', img: 'images/motor-beat.jpg' },
-            { name: 'Honda Scoopy', type: 'Matic 110cc', price: 85000, stock: 3, duration: '1–14 hari', img: 'images/motor-scoopy.jpg' },
-            { name: 'Yamaha NMAX', type: 'Matic 155cc', price: 120000, stock: 2, duration: '1–10 hari', img: 'images/motor-nmax.jpg' },
-            { name: 'Yamaha Mio', type: 'Matic 110cc', price: 70000, stock: 0, duration: '1–14 hari', img: 'images/motor-mio.jpg' },
-            { name: 'Honda Vario 125', type: 'Matic 125cc', price: 90000, stock: 5, duration: '1–14 hari', img: 'images/motor-vario.jpg' },
-            { name: 'Yamaha Aerox', type: 'Matic 155cc', price: 110000, stock: 3, duration: '1–10 hari', img: 'images/motor-aerox.jpg' },
-        ];
-
-        const snorkelPackages = [
-            { name: 'Paket 3 Spot Reguler', price: 250000, desc: '3 spot snorkeling populer', img: 'images/snorkel-reguler.jpg' },
-            { name: 'Paket Turtle Point', price: 300000, desc: 'Berenang bareng penyu', img: 'images/snorkel-turtle.jpg' },
-            { name: 'Paket Manta Point', price: 450000, desc: 'Spot manta ray musiman', img: 'images/snorkel-manta.jpg' },
-            { name: 'Paket Sunrise Snorkeling', price: 275000, desc: 'Berangkat pagi, laut masih sepi', img: 'images/snorkel-sunrise.jpg' },
-            { name: 'Paket Private Boat', price: 600000, desc: 'Kapal khusus rombongan sendiri', img: 'images/snorkel-private.jpg' },
-            { name: 'Paket Island Hopping', price: 350000, desc: '3 pulau + snorkeling', img: 'images/snorkel-hopping.jpg' },
-        ];
-
-        const villaRooms = [
-            { name: 'Kamar Garden View', price: 850000, desc: '2 kamar tidur, taman pribadi', img: 'images/villa-garden.jpg' },
-            { name: 'Kamar Ocean View', price: 1200000, desc: 'Balkon hadap laut langsung', img: 'images/villa-ocean.jpg' },
-            { name: 'Villa Suite Private Pool', price: 1800000, desc: 'Kolam renang privat sendiri', img: 'images/villa-suite.jpg' },
-        ];
-
-        const TIME_SLOTS = ['06.00 – 07.00', '07.00 – 08.00', '08.00 – 09.00', '09.00 – 10.00', '10.00 – 11.00', '11.00 – 12.00', '12.00 – 13.00'];
-
-        /* fallback when an image path doesn't exist yet */
-        function imgFallback(el, label) {
-            const div = document.createElement('div');
-            div.className = 'w-full h-full flex items-center justify-center text-center px-2 bg-teal/10 text-teal/50 text-xs font-semibold';
-            div.textContent = label;
-            el.replaceWith(div);
-        }
-
-        /* ---------- RENDER: MOTOR ---------- */
-        const motorGrid = document.getElementById('motor-grid');
-        motors.forEach((m) => {
-            const off = m.stock === 0;
-            const card = document.createElement('div');
-            card.className = `rounded-[22px] border border-ink/10 bg-[#FBF6EA] overflow-hidden flex flex-col ${off ? 'opacity-60' : ''}`;
-            card.innerHTML = `
-      <div class="relative aspect-[4/3] bg-teal/10 overflow-hidden">
-        <img src="${m.img}" alt="${m.name}" class="w-full h-full object-cover" onerror="imgFallback(this,'Foto ${m.name}')">
-        <span class="absolute top-3 left-3 bg-sand/90 backdrop-blur px-3 py-1 rounded-full text-[11px] font-semibold text-teal">${m.type}</span>
-        ${off ? `<span class="absolute inset-0 bg-ink/50 flex items-center justify-center"><span class="bg-coral text-sand text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">MOTOR HABIS</span></span>` : ''}
+    <!-- Highlight 2 -->
+    <div class="row align-items-center mt-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <h3>JAPATI – Anti Dropout Student Tracking</h3>
+        <p>
+          <strong>Problem:</strong> The Bogor City Education Office needed a way to identify out-of-school children and bring them back into education.
+        </p>
+        <p>
+          <strong>What I built:</strong> A web-based application for registering and tracking students with geolocation, supporting placement in nearby schools and PKBM. I contributed as a programmer expert, developing and implementing the system.
+        </p>
+        <p>
+          <strong>Result:</strong> By November 2019, more than 100 students had been registered and placed, with all costs funded by the government.
+        </p>
+        <!-- TODO: tambahkan Tech stack -->
       </div>
-      <div class="p-5 flex flex-col flex-1">
-        <div class="flex items-start justify-between gap-2">
-          <h3 class="font-display font-semibold text-lg">${m.name}</h3>
-          <span class="text-xs font-semibold ${off ? 'text-ink/40' : 'text-lagoon'} whitespace-nowrap">${off ? 'Stok habis' : m.stock + ' unit tersedia'}</span>
-        </div>
-        <p class="text-sm text-ink/55 mt-1">Durasi sewa: ${m.duration}</p>
-        <div class="mt-4 flex items-end justify-between gap-3 pt-4 border-t border-dashed border-ink/15">
-          <p><span class="font-display text-xl font-semibold">${rupiah(m.price)}</span><span class="text-ink/50 text-sm">/hari</span></p>
-          ${off
-                    ? `<button disabled class="bg-ink/10 text-ink/40 text-sm font-semibold px-4 py-2.5 rounded-full cursor-not-allowed">Stok Habis</button>`
-                    : `<button onclick="bookMotor('${m.name.replace(/'/g, "\\'")}', ${m.price})" class="bg-teal text-sand text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-tealDark transition-colors">Booking Sekarang</button>`
-                }
-        </div>
-      </div>`;
-            motorGrid.appendChild(card);
-        });
-
-        function bookMotor(name, price) {
-            const msg = `Halo Locatiera!  Saya mau booking motor:\n\n ${name}\n ${rupiah(price)}/hari\n\nMohon info ketersediaan & cara pembayarannya ya. Terima kasih!`;
-            window.open(waLink(msg), '_blank');
-        }
-
-        /* ---------- RENDER: SNORKELING ---------- */
-        const snorkelGrid = document.getElementById('snorkel-grid');
-        snorkelPackages.forEach((p, i) => {
-            const card = document.createElement('button');
-            card.className = 'text-left rounded-[22px] border border-ink/10 bg-[#FBF6EA] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[0_20px_40px_-25px_rgba(21,51,49,0.4)] transition-all';
-            card.innerHTML = `
-      <div class="relative aspect-[4/3] bg-lagoon/10 overflow-hidden">
-        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover" onerror="imgFallback(this,'Foto ${p.name}')">
+      <div class="col-md-6 text-center">
+        <img src="img/JAPATIa.png" alt="JAPATI Student Tracking System" class="img-fluid rounded shadow">
       </div>
-      <div class="p-5 flex flex-col flex-1">
-        <h3 class="font-display font-semibold text-lg">${p.name}</h3>
-        <p class="text-sm text-ink/55 mt-1">${p.desc}</p>
-        <div class="mt-4 flex items-end justify-between gap-3 pt-4 border-t border-dashed border-ink/15">
-          <p><span class="font-display text-xl font-semibold">${rupiah(p.price)}</span><span class="text-ink/50 text-sm">/org</span></p>
-          <span class="bg-teal text-sand text-sm font-semibold px-4 py-2.5 rounded-full">Pilih Tanggal</span>
-        </div>
-      </div>`;
-            card.addEventListener('click', () => openSnorkelModal(i));
-            snorkelGrid.appendChild(card);
-        });
+    </div>
 
-        let currentSnorkel = null;
-        let snorkelTime = null;
-        let snorkelPeople = 1;
-
-        function openSnorkelModal(i) {
-            currentSnorkel = snorkelPackages[i];
-            snorkelTime = null;
-            snorkelPeople = 1;
-            document.getElementById('snorkel-modal-name').textContent = currentSnorkel.name;
-            document.getElementById('snorkel-modal-price').textContent = rupiah(currentSnorkel.price) + ' / orang';
-            document.getElementById('snorkel-modal-img').style.backgroundImage = `url('${currentSnorkel.img}')`;
-            document.getElementById('snorkel-people').textContent = '1';
-            document.getElementById('snorkel-date').value = '';
-            document.getElementById('snorkel-date').min = new Date().toISOString().split('T')[0];
-
-            const timesEl = document.getElementById('snorkel-times');
-            timesEl.innerHTML = '';
-            TIME_SLOTS.forEach((slot) => {
-                const b = document.createElement('button');
-                b.type = 'button';
-                b.textContent = slot;
-                b.className = 'time-slot text-sm font-medium border border-ink/15 rounded-xl py-2.5 hover:border-teal transition-colors';
-                b.addEventListener('click', () => {
-                    snorkelTime = slot;
-                    timesEl.querySelectorAll('.time-slot').forEach((el) => el.classList.remove('bg-teal', 'text-sand', 'border-teal'));
-                    b.classList.add('bg-teal', 'text-sand', 'border-teal');
-                    onSnorkelChange();
-                });
-                timesEl.appendChild(b);
-            });
-
-            updateSnorkelTotal();
-            const modal = document.getElementById('snorkel-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSnorkelModal() {
-            const modal = document.getElementById('snorkel-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
-
-        function changePeople(delta) {
-            snorkelPeople = Math.max(1, snorkelPeople + delta);
-            document.getElementById('snorkel-people').textContent = snorkelPeople;
-            updateSnorkelTotal();
-        }
-
-        function updateSnorkelTotal() {
-            const total = currentSnorkel ? currentSnorkel.price * snorkelPeople : 0;
-            document.getElementById('snorkel-total').textContent = rupiah(total);
-            onSnorkelChange();
-        }
-
-        function onSnorkelChange() {
-            const date = document.getElementById('snorkel-date').value;
-            document.getElementById('snorkel-confirm').disabled = !(date && snorkelTime);
-        }
-
-        function confirmSnorkel() {
-            const date = document.getElementById('snorkel-date').value;
-            if (!date || !snorkelTime || !currentSnorkel) return;
-            const dateLabel = new Date(date + 'T00:00:00').toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-            const total = currentSnorkel.price * snorkelPeople;
-            const msg = `Halo Locatiera! Saya mau booking snorkeling:\n\n ${currentSnorkel.name}\n ${dateLabel}\n ${snorkelTime}\n ${snorkelPeople} orang\n Total: ${rupiah(total)}\n\nMohon konfirmasi ketersediaannya ya. Terima kasih!`;
-            window.open(waLink(msg), '_blank');
-        }
-
-        /* ---------- RENDER: VILLA ---------- */
-        const villaGrid = document.getElementById('villa-grid');
-        villaRooms.forEach((v, i) => {
-            const card = document.createElement('button');
-            card.className = 'text-left rounded-[22px] border border-ink/10 bg-[#FBF6EA] overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-[0_20px_40px_-25px_rgba(21,51,49,0.4)] transition-all';
-            card.innerHTML = `
-      <div class="relative aspect-[4/3] bg-coral/10 overflow-hidden">
-        <img src="${v.img}" alt="${v.name}" class="w-full h-full object-cover" onerror="imgFallback(this,'Foto ${v.name}')">
+    <!-- Highlight 3 -->
+    <div class="row align-items-center mt-5">
+      <div class="col-md-6">
+        <h3>E-Report & Attendance System – PT Narwastu Asia Ekatama (NAE)</h3>
+        <p>
+          <strong>Problem:</strong> NAE, a pest control company, needed field technicians' reports and attendance to be tracked in real time for both the admin team and management.
+        </p>
+        <p>
+          <strong>What I built:</strong> A web-based E-Report and Attendance System with structured reporting, automated attendance monitoring, and admin and management views, improving accuracy and transparency in daily operations.
+        </p>
+        <!-- TODO: tambahkan Tech stack dan Result (jumlah teknisi, laporan per bulan, waktu yang dihemat) -->
       </div>
-      <div class="p-5 flex flex-col flex-1">
-        <h3 class="font-display font-semibold text-lg">${v.name}</h3>
-        <p class="text-sm text-ink/55 mt-1">${v.desc}</p>
-        <div class="mt-4 flex items-end justify-between gap-3 pt-4 border-t border-dashed border-ink/15">
-          <p><span class="font-display text-xl font-semibold">${rupiah(v.price)}</span><span class="text-ink/50 text-sm">/malam</span></p>
-          <span class="bg-teal text-sand text-sm font-semibold px-4 py-2.5 rounded-full">Cek Tanggal</span>
+      <div class="col-md-6 text-center">
+        <img src="img/NAE.png" alt="E-Report and Attendance System" class="img-fluid rounded shadow">
+      </div>
+    </div>
+
+    <!-- TODO (Data Analyst Case Study): setelah proyek analisis selesai, tambahkan blok baru dengan format yang sama:
+    <div class="row align-items-center mt-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <h3>Judul Case Study</h3>
+        <p><strong>Question:</strong> ... </p>
+        <p><strong>Approach:</strong> Python/pandas, SQL, dashboard ... </p>
+        <p><strong>Insight:</strong> ... <a href="LINK_GITHUB" target="_blank">View on GitHub</a></p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="img/CASE-STUDY.png" alt="Data Analysis Case Study" class="img-fluid rounded shadow">
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- Section: Web Development Highlights -->
+<section id="web-design-highlights">
+  <div class="container">
+    <h2>Web Development Highlights</h2>
+    <p>Some of the production websites I have built and maintained.</p>
+
+    <div class="cards">
+      <div class="card">
+        <img src="img/MJS.jpeg" alt="Minhaajushshoobiriin Islamic School website">
+        <div class="card-footer">
+          <a href="https://minjusho.com/" target="_blank">Visit Website</a>
         </div>
-      </div>`;
-            card.addEventListener('click', () => openVillaModal(i));
-            villaGrid.appendChild(card);
-        });
+      </div>
 
-        let currentVilla = null;
+      <div class="card">
+        <img src="img/NAE WEB.jpeg" alt="Narwastu Asia Ekatama website">
+        <div class="card-footer">
+          <a href="https://solusiantirayap.com/" target="_blank">Visit Website</a>
+        </div>
+      </div>
 
-        function openVillaModal(i) {
-            currentVilla = villaRooms[i];
-            document.getElementById('villa-modal-name').textContent = currentVilla.name;
-            document.getElementById('villa-modal-price').textContent = rupiah(currentVilla.price) + ' / malam';
-            document.getElementById('villa-modal-img').style.backgroundImage = `url('${currentVilla.img}')`;
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('villa-checkin').value = '';
-            document.getElementById('villa-checkin').min = today;
-            document.getElementById('villa-checkout').value = '';
-            document.getElementById('villa-checkout').min = today;
-            document.getElementById('villa-nights-note').textContent = '';
-            document.getElementById('villa-total').textContent = 'Rp0';
-            document.getElementById('villa-confirm').disabled = true;
+      <div class="card">
+        <img src="img/MTZM.jpeg" alt="Pondok Sekolah Multazam website">
+        <div class="card-footer">
+          <a href="https://pondoksekolahmultazam.sch.id/" target="_blank">Visit Website</a>
+        </div>
+      </div>
 
-            const modal = document.getElementById('villa-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+      <div class="card">
+        <img src="img/LDII WEB.jpeg" alt="LDII Kota Bogor website">
+        <div class="card-footer">
+          <a href="https://ldiikotabogor.or.id/" target="_blank">Visit Website</a>
+        </div>
+      </div>
 
-        function closeVillaModal() {
-            const modal = document.getElementById('villa-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-            document.body.style.overflow = '';
-        }
+      <div class="card">
+        <img src="img/GENDIGI.jpeg" alt="Cipta Gendigi website">
+        <div class="card-footer">
+          <a href="https://ciptagendigi.com/" target="_blank">Visit Website</a>
+        </div>
+      </div>
 
-        function onVillaChange() {
-            const inEl = document.getElementById('villa-checkin');
-            const outEl = document.getElementById('villa-checkout');
-            outEl.min = inEl.value || new Date().toISOString().split('T')[0];
+      <div class="card">
+        <img src="img/JVANATION.jpeg" alt="Java Nations Indonesia website">
+        <div class="card-footer">
+          <a href="https://www.javanationsindonesia.ch/" target="_blank">Visit Website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const noteEl = document.getElementById('villa-nights-note');
-            const confirmBtn = document.getElementById('villa-confirm');
+<!------------------------------ Skills ------------------------------>
 
-            if (!inEl.value || !outEl.value) {
-                noteEl.textContent = '';
-                document.getElementById('villa-total').textContent = 'Rp0';
-                confirmBtn.disabled = true;
-                return;
-            }
+<section class="skills-section" id="skills-section">
+  <!-- Left Side -->
+  <div class="skills-left">
+    <h1>
+      Technical
+      Skills Meet
+      Data-Driven
+      Thinking
+    </h1>
 
-            const nights = Math.round((new Date(outEl.value) - new Date(inEl.value)) / 86400000);
-            if (nights <= 0) {
-                noteEl.textContent = 'Tanggal check-out harus setelah check-in ya.';
-                noteEl.className = 'mt-3 text-sm text-coral font-medium';
-                document.getElementById('villa-total').textContent = 'Rp0';
-                confirmBtn.disabled = true;
-                return;
-            }
+    <!-- Icon Skills -->
+    <div class="skills-footer">
+      <img src="img/php.png" alt="PHP">
+      <img src="img/CSS.png" alt="CSS">
+      <img src="img/JS.png" alt="JavaScript">
+      <img src="img/figma.png" alt="Figma">
+    </div>
 
-            noteEl.textContent = `${nights} malam menginap`;
-            noteEl.className = 'mt-3 text-sm text-ink/50';
-            document.getElementById('villa-total').textContent = rupiah(nights * currentVilla.price);
-            confirmBtn.disabled = false;
-        }
+    <!-- Kotak BNSP -->
+    <div class="bnsp-box">
+      <img src="img/Logo-BNSP.png" alt="BNSP Logo">
+      <p>BNSP Certified Systems Analyst</p>
+    </div>
+  </div>
 
-        function confirmVilla() {
-            const inVal = document.getElementById('villa-checkin').value;
-            const outVal = document.getElementById('villa-checkout').value;
-            if (!inVal || !outVal || !currentVilla) return;
-            const nights = Math.round((new Date(outVal) - new Date(inVal)) / 86400000);
-            if (nights <= 0) return;
+  <!-- Right Side -->
+  <div class="skills-right">
+    <div class="skill-item">
+      <h3>Programming</h3>
+      <p>Python (Flask), PHP, JavaScript, HTML/CSS</p>
+    </div>
+    <div class="skill-item">
+      <h3>Database & SQL</h3>
+      <p>MySQL / PostgreSQL, database design, query writing for reporting</p>
+    </div>
+    <div class="skill-item">
+      <h3>Data Analytics</h3>
+      <p>Data cleaning, exploratory analysis, and reporting with SQL, Python, and Google Analytics</p>
+    </div>
+    <div class="skill-item">
+      <h3>Web & API</h3>
+      <p>Full-stack web development, REST API, WordPress, system integration</p>
+    </div>
+    <div class="skill-item">
+      <h3>Systems Analysis</h3>
+      <p>Requirement gathering, ERD, process design (BNSP certified)</p>
+    </div>
+    <div class="skill-item">
+      <h3>Currently Learning</h3>
+      <p>Apache Airflow, BigQuery, dbt</p>
+    </div>
+  </div>
+</section>
 
-            const fmt = (d) => new Date(d + 'T00:00:00').toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-            const total = nights * currentVilla.price;
-            const msg = `Halo Locatiera! Saya mau booking villa:\n\n🏡 ${currentVilla.name}\n📅 Check-in: ${fmt(inVal)}\n📅 Check-out: ${fmt(outVal)}\n🌙 ${nights} malam\n Total: ${rupiah(total)}\n\nMohon konfirmasi ketersediaannya ya. Terima kasih!`;
-            window.open(waLink(msg), '_blank');
-        }
-    </script>
+<!------------------------------ Education ------------------------------>
 
+<section class="education-certification py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Education & Certification</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-5">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <h4>Pendidikan Akuntansi dan Manajemen</h4>
+          <p>Pondok Pesantren Wali Barokah Kediri</p>
+          <span class="edu-year">2020 - 2024</span>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <h4>S1 Sistem Informasi</h4>
+          <p>Universitas Sainte Muhammadiyah</p>
+          <span class="edu-year">2020 - 2024</span>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="edu-card">
+          <div class="edu-icon">📜</div>
+          <h4>Analis Sistem</h4>
+          <p>Badan Nasional Sertifikasi Profesi (BNSP)</p>
+          <span class="edu-year">2024</span>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="edu-card">
+          <div class="edu-icon">📜</div>
+          <h4>Bootcamp UI/UX Designer</h4>
+          <p>GreatEdu</p>
+          <span class="edu-year">2023</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section Gallery -->
+<section id="gallery" class="py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">My Photo Gallery</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/RULI 1.png" alt="Gallery 1"></div>
+        <div class="swiper-slide"><img src="img/RULI 2.png" alt="Gallery 2"></div>
+        <div class="swiper-slide"><img src="img/RULI 3.png" alt="Gallery 3"></div>
+        <div class="swiper-slide"><img src="img/RULI 4.png" alt="Gallery 4"></div>
+        <div class="swiper-slide"><img src="img/RULI 5.png" alt="Gallery 5"></div>
+        <div class="swiper-slide"><img src="img/RULI 7.png" alt="Gallery 6"></div>
+        <div class="swiper-slide"><img src="img/RULI 6.png" alt="Gallery 7"></div>
+        <div class="swiper-slide"><img src="img/RULI 8.png" alt="Gallery 8"></div>
+        <div class="swiper-slide"><img src="img/RULI 9.png" alt="Gallery 9"></div>
+      </div>
+
+      <!-- Bulatan navigasi -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container text-center">
+    <p class="footer-title">Ruli Jordan Portfolio</p>
+    <!-- TODO: ganti "#" dengan link GitHub, LinkedIn, dan lainnya yang asli -->
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SwiperJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 20,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
